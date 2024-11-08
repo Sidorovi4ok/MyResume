@@ -1,0 +1,278 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%; /* Установить 100% высоты для html и body */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column; /* Установить flexbox для вертикального расположения */
+    background-color: #121212; /* Темный фон */
+    color: #E0E0E0; /* Светлый текст */
+}
+
+header {
+    background: #1F1F1F; /* Темно-серый фон для заголовка */
+    color: #E0E0E0; /* Светлый текст */
+    padding: 10px 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    flex: 1; /* Позволяет основному содержимому занимать оставшееся пространство */
+    display: flex; /* Используем flexbox для расположения блоков */
+}
+
+.welcome, .services {
+    background-color: #2A2A2A; /* Темно-серая фоновая секция */
+    padding: 15px; /* Отступ внутри секции */
+    border-radius: 5px; /* Скругление углов */
+    flex: 1; /* Каждый блок занимает равную ширину */
+    margin: 10px; /* Отступы между блоками */
+}
+
+footer {
+    background: #1F1F1F; /* Темно-серый фон для подвала */
+    color: #E0E0E0; /* Светлый текст */
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .container {
+        width: 90%;
+        flex-direction: column; /* На маленьких экранах блоки располагаются вертикально */
+    }
+
+    .welcome, .services {
+        margin: 10px 0; /* Отступы между блоками */
+        flex: 1 1 100%; /* На мобильных устройствах блоки занимают 100% ширины */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    section {
+        font-size: 14px;
+    }
+}
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Roboto', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 100vh;
+        background: linear-gradient(to right, #667eea, #764ba2);
+        color: #333;
+    }
+
+    header, footer {
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        width: 100%;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 2rem;
+    }
+
+    .nav-buttons {
+        display: flex;
+        gap: 15px;
+    }
+
+    .nav-buttons button {
+        background: none;
+        color: #fff;
+        border: 2px solid #fff;
+        padding: 10px 20px;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .nav-buttons button:hover {
+        background: #fff;
+        color: #000;
+    }
+
+    footer p {
+        margin: 0;
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .container {
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        max-width: 1200px;
+        width: 100%;
+        padding: 40px 20px;
+        background: linear-gradient(to right, #667eea, #764ba2);
+        margin-top: 100px;
+        margin-bottom: 100px;
+        position: relative;
+    }
+
+    .info, .contacts, .resume {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 30px;
+        border-radius: 15px;
+        margin: 20px;
+        width: 45%;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        position: relative;
+        text-align: left;
+        transition: transform 0.3s ease, opacity 0.6s ease;
+    }
+
+    .info, .contacts {
+        opacity: 1;
+    }
+
+    .resume {
+        opacity: 0;
+        transform: translateY(30px);
+        pointer-events: none;
+        width: 95%;
+		position: absolute;
+    }
+
+    /* Класс для показа блока с резюме */
+    .resume.active {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    .info.hidden, .contacts.hidden {
+        opacity: 0;
+        transform: translateY(30px);
+        pointer-events: none;
+    }
+
+    .info:hover, .contacts:hover {
+        transform: translateY(-5px);
+    }
+
+    .info img {
+        max-width: 180px;
+        border-radius: 50%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        position: absolute;
+		top: -110px;
+		left: 34%;
+        border: 5px solid white;
+    }
+
+    .info h2, .resume h2, .contacts h2 {
+        margin-bottom: 20px;
+        font-size: 2rem;
+        color: #333;
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    .info p, .resume p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        color: #555;
+        margin: 10px 0;
+    }
+
+    .contacts button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 18px;
+        margin: 10px 0;
+        background: linear-gradient(to right, #ff416c, #ff4b2b);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        font-weight: bold;
+		font-size: 18px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contacts button i {
+        margin-right: 10px;
+    }
+
+    .contacts button:hover {
+        background: linear-gradient(to right, #ff4b2b, #ff416c);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .resume-close-btn {
+        background: #ff4b2b;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        font-weight: bold;
+        margin-top: 20px;
+        width: 100%;
+        transition: background 0.3s ease;
+    }
+
+    .resume-close-btn:hover {
+        background: #ff6b4b;
+    }
+
+    /* Адаптивность */
+    @media (max-width: 768px) {
+        .info, .contacts, .resume {
+            width: 100%;
+        }
+
+        header {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .nav-buttons {
+            justify-content: center;
+            margin-top: 10px;
+        }
+    }
